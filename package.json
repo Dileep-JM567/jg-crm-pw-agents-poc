@@ -1,0 +1,22 @@
+{
+  "name": "jg-crm-pw-agents-poc",
+  "version": "1.0.0",
+  "description": "Proof of concept for end-to-end testing of a sample CRM application using **Playwright with TypeScript** and **AI agents** (Planner, Generator, Healer), with changes delivered through GitHub branches and pull requests.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dileep-JM567/jg-crm-pw-agents-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dileep-JM567/jg-crm-pw-agents-poc/issues"
+  },
+  "homepage": "https://github.com/Dileep-JM567/jg-crm-pw-agents-poc#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6"
+  }
+}
