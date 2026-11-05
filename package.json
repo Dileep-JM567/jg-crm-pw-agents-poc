@@ -17,6 +17,10 @@
   "homepage": "https://github.com/Dileep-JM567/jg-crm-pw-agents-poc#readme",
   "devDependencies": {
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.6"
+    "@types/node": "^26.6.6",
+    "@types/pdf-parse": "^1.1.5"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
   }
 }
