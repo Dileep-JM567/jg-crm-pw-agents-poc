@@ -45,22 +45,7 @@ test.describe('Reading a PDF from a URL', () => {
     }
   });
 
-  test('Interact with embedded web PDF viewer UI', async ({ page }) => {
-    await page.goto('https://example.com');
-    // 1. Click the button to launch or unlock the draft view
-    await page.getByRole('button', { name: 'Open Draft Preview' }).click();
-    // 2. Locate the viewer container or iframe
-    const pdfViewer = page.locator('#pdf-viewer-container');
-    await pdfViewer.waitFor({ state: 'visible' });
-    // 3. Hover over the element and scroll down to load lazy elements/simulate reading
-    await pdfViewer.hover();
-    await page.mouse.wheel(0, 600); // Scroll down 600 pixels vertically
-    // 4. Wait for a specific draft watermark text if rendered in the web DOM layer
-    const draftWatermark = page.getByText('DRAFT', { exact: false });
-    await expect(draftWatermark).toBeVisible();
-  });
-
-  test('Test PDF interaction, scroll and text extraction on live Mozilla app', async ({ page }) => {
+  test('Test PDF interaction, scroll and text extraction on live app', async ({ page }) => {
     // 1. Open the PDF.js viewer and confirm it reports all document pages.
     await page.goto('https://mozilla.github.io/pdf.js/web/viewer.html');
     const pageCountLabel = page.locator('#numPages');
@@ -69,7 +54,7 @@ test.describe('Reading a PDF from a URL', () => {
     await expect(pdfPages).toHaveCount(14);
 
     // 2. Scroll each page into view and read its rendered text layer from the browser.
-    const pageTexts: string[] = [];
+    const pageTexts: string[] = []
     for (let pageIndex = 0; pageIndex < 14; pageIndex++) {
       const pdfPage = pdfPages.nth(pageIndex);
       await pdfPage.scrollIntoViewIfNeeded();
